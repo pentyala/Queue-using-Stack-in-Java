@@ -11,7 +11,7 @@ class Queue<T>
     //The following function is called by the function dequeue(Never call this function by using an object, It generates errors).
     //This function moves all the elements from stack e to d.
     //</description>
-    public run_trans()
+    public void run_trans()
     {
         while(!e.empty())
         {
@@ -41,6 +41,14 @@ class Queue<T>
         return (T)d.pop();
     }
     
+    public T peek()
+    {
+        if(d.empty())
+            run_trans();
+        if(d.empty())
+            return null;
+        return (T)d.peek();
+    }
     //The algorithm works as follows:
     //The elements are pushed in to the stack in a LIFO fashion.
     //But when these elements are moved to second stack all the elements are reversed, thus making the first inserted elements to be popped first. thus making the data structure a FIFo fashioned.
